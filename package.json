@@ -12,5 +12,8 @@
   },
   "author": "dhuertas",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/dorchsoftteam/ajs-learning#readme"
+  "homepage": "https://bitbucket.org/dorchsoftteam/ajs-learning#readme",
+  "dependencies": {
+    "angular": "^1.4.4"
+  }
 }
