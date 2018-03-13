@@ -2,29 +2,15 @@
 
 angular.module('myApp', []);
 
-angular.module('myApp').controller('ParentController', [function() {
+angular.module('myApp').controller('MainController', [function() {
 
-	this.message = "Hello from the parent";
+	this.user = {
+		firstName: 'John',
+		lastName: 'Doe',
+		accountType: 'CHECKING',
+		balance: 1349.2
+	};
 
 }]);
 
-angular.module('myApp').controller('FirstChild', [function() {
-
-	this.message = "Hello from the first child";
-
-}]);
-
-angular.module('myApp').controller('SecondChild', ['$scope', '$interval', function($scope, $interval) {
-
-	this.message = "Hello from the second child";
-	this.value = 1;
-
-	$interval(function() {
-		this.value = Math.round(Math.random() * 1000000) + 1;
-	}.bind(this), 2000);
-
-	$scope.$watch('second.value', function(newValue, oldValue){
-		console.log("New value: ", newValue, "Old value: ", oldValue);
-	});
-}]);
 

@@ -4,21 +4,16 @@
 	<title>Angular Setup</title>
 	<script type="text/javascript" src="../lib/angular.js"></script>
 	<script type="text/javascript" src="app.js"></script>
+	<link rel="stylesheet" href="css/bootstrap.css"></style>
 </head>
 
 <body>
 
-	<div ng-controller = "ParentController as parent">
-		<p>This is the parent: {{ parent.message }}</p>
-		<div ng-controller = "FirstChild as first">
-			<p>This is the parent: {{ parent.message }}</p>
-			<p>This is the first child: {{ first.message }}</p>
-		</div>
-		<div ng-controller = "SecondChild as second">
-			<p>This is the parent: {{ parent.message }}</p>
-			<p>This is the second child: {{ second.message }}</p>
-			<p>Randomizer: {{ second.value }}</p>
-		</div>
+	<div ng-controller = "MainController as main">
+		<p>First Name: {{ main.user.firstName | uppercase}}</p>
+		<p>Last Name: {{ main.user.lastName | uppercase}}</p>		
+		<p>Account Type: {{ main.user.accountType | lowercase}}</p>
+		<p>Balance : {{ main.user.balance | currency:'USD $':0}}</p><!--el :0 indica 0 decimales-->
 	</div>
 
 </body>
