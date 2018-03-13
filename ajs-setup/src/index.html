@@ -7,17 +7,7 @@
 </head>
 
 <body>
-	<h1>First example: Child independant</h1>
-	<div ng-controller = "ParentController">
-		<input type="text" ng-model="name">
-		<p>This is the parent: {{ name }}</p>
-		<div ng-controller = "ChildController">
-			<input type="text" ng-model="name">
-			<p>This is the child: {{ name }}</p>
-		</div>
-	</div>
 
-	<h1>Second example: Both bounded</h1>
 	<div ng-controller = "ParentController">
 		<input type="text" ng-model="model.name">
 		<p>This is the parent: {{ model.name }}</p>
@@ -26,7 +16,14 @@
 			<p>This is the child: {{ model.name }}</p>
 		</div>
 	</div>
-
+	<div ng-controller = "ParentController">
+		<input type="text" ng-model="model.name">
+		<p>This is the second parent: {{ model.name }}</p>
+	</div>
+	<div ng-controller = "IndependantController">
+		<input type="text" ng-model="model.name">
+		<p>This is the independant parent: {{ model.name }}</p>
+	</div>
 </body>
 
 </html>

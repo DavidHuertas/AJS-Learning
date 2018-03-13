@@ -16,3 +16,11 @@ angular.module('myApp').controller('ParentController', ['$scope', function($scop
 angular.module('myApp').controller('ChildController', ['$scope', function($scope) {
 
 }]);
+
+angular.module('myApp').controller('IndependantController', ['$scope', function($scope) {
+
+	$scope.model = {
+		name: 'Michael Jackson'
+	};
+
+}]);
