@@ -2,18 +2,17 @@
 
 angular.module('myApp', []);
 
-angular.module('myApp').controller('MainController', ['$scope', '$interval', function($scope, $interval) {
-	
-	$scope.randomValue = -999;
+angular.module('myApp').controller('ParentController', ['$scope', function($scope) {
 
-	$scope.names = ['David', 'Laura', 'Eris'];
 
-	$scope.quantity = 20;
-	$scope.cost = 1.99;
+	$scope.model = {
+		name: 'John Smith'
+	};
 
-	$scope.pWidth = 100;
+	$scope.name = 'John Doe';
 
-	$interval(function(){//This $interval function is executed every 2 seconds
-		$scope.randomValue = Math.round(Math.random() * (1000000));
-	}, 2000);
+}]);
+
+angular.module('myApp').controller('ChildController', ['$scope', function($scope) {
+
 }]);
