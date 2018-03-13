@@ -2,10 +2,19 @@
 
 angular.module('myApp', []);
 
-angular.module('myApp').controller('MainController', ['$scope', function($scope) {
-	console.log("hello");
-	$scope.message = 'Hello';
-	$scope.sayHello = function(name) {
-		return $scope.message + ' ' + name;
+angular.module('myApp').controller('MainController', ['$scope', '$interval', function($scope, $interval) {
+	
+	var items = ['bananas', 'apples', 'pears', 'cherries', 'peaches'];
+
+	$scope.itemIndex = null;
+	$scope.currentItem = '';
+
+	$scope.getItem = function() {
+		$scope.currentItem = items[$scope.itemIndex];
 	};
+
+	$interval(function(){//This $interval function is executed every 2 seconds
+		$scope.itemIndex = Math.round(Math.random() * (items.length - 1));
+		$scope.getItem();
+	}, 2000);
 }]);
