@@ -9,10 +9,14 @@
 
 <body>
 
-	<div ng-controller = "MainController as main">
-		<p>Name: {{ main.user.name | capitalize }}</p>
-		<p>Account Type: {{ main.user.accountType | capitalize }}</p>
-		<p>Balance : {{ main.user.balance | currency:'USD $':0 }}</p><!--el :0 indica 0 decimales-->
+	<div ng-controller="MainController as main">
+		<ul ng-repeat="user in main.users | orderBy:'-lastName'">
+		<!--<ul ng-repeat="user in main.users | orderBy:'balance' | limitTo:2:3">-->
+			<li>Name: {{ user.firstName + ' ' + user.lastName | capitalize}}</li>
+			<li>Account: {{ user.accountType | capitalize}}</li>
+			<li>Balance: {{ user.balance | currency:'EUR €':2}}</li>
+			<li>Birthday: {{ user.birthday }}</li>
+		</ul>
 	</div>
 
 </body>
