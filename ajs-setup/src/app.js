@@ -4,18 +4,14 @@ angular.module('myApp', []);
 
 angular.module('myApp').controller('MainController', [function() {
 
-	this.user = [
+	this.now = new Date();
+
+	this.user = 
 	{
-		firstName: 'JOHN',
-		lastName: 'doe',
-		accountType: {
-			accountId: 1111222233334444,
-			name: 'checking'
-		},
-		balance: 1349.2,
-		birthday: 25792760000,
-		hobbies: ['music', 'videogames', 'programming']
-	}];
+		name: 'Dave Grohl',
+		birthday: 171781200000,
+		lastLogin: 1437705300000
+	};
 
 }]);
 
