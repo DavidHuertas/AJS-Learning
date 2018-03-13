@@ -8,13 +8,17 @@
 
 <body>
 
-	<div ng-controller = "FirstController">
-		<input type="text" ng-model="model.name">
-		<p>This is the first controller: {{ model.name }}</p>
-	</div>
-	<div ng-controller = "SecondController">
-		<input type="text" ng-model="model.name">
-		<p>This is the second controller: {{ model.name }}</p>
+	<div ng-controller = "ParentController as parent">
+		<p>This is the parent: {{ parent.message }}</p>
+		<div ng-controller = "FirstChild as first">
+			<p>This is the parent: {{ parent.message }}</p>
+			<p>This is the first child: {{ first.message }}</p>
+		</div>
+		<div ng-controller = "SecondChild as second">
+			<p>This is the parent: {{ parent.message }}</p>
+			<p>This is the second child: {{ second.message }}</p>
+			<p>Randomizer: {{ second.value }}</p>
+		</div>
 	</div>
 
 </body>
