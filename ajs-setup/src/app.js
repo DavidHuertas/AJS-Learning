@@ -2,25 +2,18 @@
 
 angular.module('myApp', []);
 
-angular.module('myApp').controller('ParentController', ['$scope', function($scope) {
+angular.module('myApp').service('SharedService', [function($scope) {
+	return {name: 'Bill Johnson'};
+}]);
 
+angular.module('myApp').controller('FirstController', ['$scope', 'SharedService', function($scope, SharedService) {
 
-	$scope.model = {
-		name: 'John Smith'
-	};
-
-	$scope.name = 'John Doe';
+	$scope.model = SharedService;
 
 }]);
 
-angular.module('myApp').controller('ChildController', ['$scope', function($scope) {
+angular.module('myApp').controller('SecondController', ['$scope', 'SharedService', function($scope, SharedService) {
 
-}]);
-
-angular.module('myApp').controller('IndependantController', ['$scope', function($scope) {
-
-	$scope.model = {
-		name: 'Michael Jackson'
-	};
+	$scope.model = SharedService;
 
 }]);
