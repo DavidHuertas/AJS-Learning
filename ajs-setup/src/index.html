@@ -10,13 +10,16 @@
 <body>
 
 	<div ng-controller="MainController as main">
-		<ul ng-repeat="user in main.users | orderBy:'-lastName'">
-		<!--<ul ng-repeat="user in main.users | orderBy:'balance' | limitTo:2:3">-->
+		<p>{{ 78945367.45678976574 }}</p>
+		<p>{{ 78945367.45678976574 | number:3}}</p>
+		<p>{{ main.user | json }}</p>
+		<!--<ul ng-repeat="user in main.users | orderBy:'-lastName'">
+		<ul ng-repeat="user in main.users | orderBy:'balance' | limitTo:2:3">
 			<li>Name: {{ user.firstName + ' ' + user.lastName | capitalize}}</li>
 			<li>Account: {{ user.accountType | capitalize}}</li>
 			<li>Balance: {{ user.balance | currency:'EUR €':2}}</li>
 			<li>Birthday: {{ user.birthday }}</li>
-		</ul>
+		</ul>-->
 	</div>
 
 </body>
