@@ -11,16 +11,14 @@
 
 	<div ng-controller="MainController as main">
 
-		<p>Data: {{ main.data }}</p>
+		<p>Name: {{ main.user.name | capitalize }}</p>
+		<p>Account Type: {{ main.user.accountType | capitalize}}</p>
+		<p>Balance: {{ main.user.balance | number:2 }}</p>
+		<p>Last login: {{ main.user.lastLogin | date:'MM/dd/yyyy \'at\' hh:mma' }}</p>
 
 		</hr>
 
-		<ul>
-			<li ng-repeat="result in main.results">
-				{{ result }}
-			</li>
-		</ul>
-
+		{{ main.user | json }}
 	</div>
 
 </body>
