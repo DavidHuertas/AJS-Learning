@@ -11,9 +11,13 @@
 
 	<div ng-controller="MainController as main">
 
+		<p>Data: {{ main.data }}</p>
+
+		</hr>
+
 		<ul>
-			<li ng-repeat="sentence in main.greetingSentences">
-				{{ sentence }}
+			<li ng-repeat="result in main.results">
+				{{ result }}
 			</li>
 		</ul>
 
