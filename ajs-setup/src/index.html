@@ -11,7 +11,12 @@
 
 	<div ng-controller="MainController as main">
 
-		<p>{{ main.firstName }} {{ main.middleName }} {{ main.lastName }}</p>
+		<ul>
+			<li ng-repeat="sentence in main.greetingSentences">
+				{{ sentence }}
+			</li>
+		</ul>
+
 	</div>
 
 </body>
