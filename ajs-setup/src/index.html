@@ -7,15 +7,28 @@
 	<link rel="stylesheet" href="css/bootstrap.css"></style>
 </head>
 
-<body>
+<body ng-controller="MainController as main">
 
-	<div ng-controller="MainController as main">
-		<p>Now: {{ main.now | date:'short' }}</p>
-		<p>Name: {{ main.user.name | capitalize }}</p>
-		<p>Birthday: {{ main.user.birthday | date:'MMMM dd, yyyy' }}</p>
-		<p>Last Login: {{ main.user.lastLogin | date:'shortDate' }}</p>
-	</div>
+	<p>Name: {{ main.user.name }}</p>
+	<p>Favourite Fruit: {{ main.user.favouriteFruit }}</p>
+	<p>Is Active? {{ main.user.isActive | yesOrNo }}</p>
 
+	</hr>
+
+	<p>Enter name:</p>
+	<p><input type="text" ng-model="main.user.name"></p>
+
+	<p>Select favourite fruit:</p>
+	<p><select ng-model="main.user.favouriteFruit" ng-options="fruit for fruit in main.fruitList"></select></p>
+
+	<p>Select active:</p>
+	<p><input type="checkbox" ng-model="main.user.isActive"> Is Active</p>
+
+	<p>Alternate select active:</p>
+	<p>
+		<input type="radio" ng-model="main.user.isActive" ng-value="true"> yes
+		<input type="radio" ng-model="main.user.isActive" ng-value="false"> no
+	</p>
 </body>
 
 </html>
