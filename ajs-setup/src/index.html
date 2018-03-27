@@ -5,30 +5,46 @@
 	<script type="text/javascript" src="../lib/angular.js"></script>
 	<script type="text/javascript" src="app.js"></script>
 	<link rel="stylesheet" href="css/bootstrap.css"></style>
+	<link rel="stylesheet" href="main.css"></style>
 </head>
 
-<body ng-controller="MainController as main">
+<body>
+	<div ng-controller="MainController as main">
+		
+		<form name="userForm" novalidate>
+			<table class="user-form">
+				<tr>
+					<td>First Name:</td>
+					<td><input type="text" ng-model="main.user.firstName" required></td>
+				</tr>
+				<tr>
+					<td>Last Name:</td>
+					<td><input type="text" ng-model="main.user.lastName" required></td>
+				</tr>
+				<tr>
+					<td>Phone (10 digits):</td>
+					<td><input type="text" ng-model="main.user.phone" required ng-minlength="10"></td>
+				</tr>
+				<tr>
+					<td>Email Address:</td>
+					<td><input type="email" ng-model="main.user.email" required></td>
+				</tr>
+				<tr>
+					<td>Zip Code:</td>
+					<td><input type="text" ng-model="main.user.zip" required ng-pattern="/\d{5}([ \-]\d{4})?/"></td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td><button ng-click="main.submitForm(userForm)">Submit</button></td>
+				</tr>
+			</table>		
+		</form>
 
-	<p>Name: {{ main.user.name }}</p>
-	<p>Favourite Fruit: {{ main.user.favouriteFruit }}</p>
-	<p>Is Active? {{ main.user.isActive | yesOrNo }}</p>
+		<p>
+			{{ main.user }}
+		</p>
 
-	</hr>
-
-	<p>Enter name:</p>
-	<p><input type="text" ng-model="main.user.name"></p>
-
-	<p>Select favourite fruit:</p>
-	<p><select ng-model="main.user.favouriteFruit" ng-options="fruit for fruit in main.fruitList"></select></p>
-
-	<p>Select active:</p>
-	<p><input type="checkbox" ng-model="main.user.isActive"> Is Active</p>
-
-	<p>Alternate select active:</p>
-	<p>
-		<input type="radio" ng-model="main.user.isActive" ng-value="true"> yes
-		<input type="radio" ng-model="main.user.isActive" ng-value="false"> no
-	</p>
+	</div>
 </body>
 
 </html>

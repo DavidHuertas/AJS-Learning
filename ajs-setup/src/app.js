@@ -4,25 +4,16 @@ angular.module('myApp', []);
 
 angular.module('myApp').controller('MainController', [function() {
 
-	this.fruitList = ['bananas', 'apples', 'pears', 'cherries', 'peaches'];
-
 	this.user = {
-		name: 'John Smith',
-		favouriteFruit: 'cherries',
-		isActive: true
-	}
 
-}]);
+	};
 
-angular.module('myApp').filter('yesOrNo', function() {
-
-	return function(value) {
-		if (value === true) {
-			return 'yes';
-		} else if (value === false) {
-			return 'no';
+	this.submitForm = function(form) {
+		if (form.$valid) {
+			window.alert('Passed');
 		} else {
-			return 'unknown';
+			window.alert('Failed');
 		}
 	};
-});
+
+}]);
