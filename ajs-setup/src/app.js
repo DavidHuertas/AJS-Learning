@@ -2,15 +2,23 @@
 
 angular.module('myApp', []);
 
-angular.module('myApp').config(function($interpolateProvider){
 
-	$interpolateProvider.startSymbol('(~');
-	$interpolateProvider.endSymbol('~)');
+angular.module('myApp').controller('MainController', ['$scope', function($scope) {
 
-});
+	var vm = this;
 
-angular.module('myApp').controller('MainController', [function() {
+	vm.specialName = 'David Orchards';
+	vm.message = '';
+	vm.name = 'Dave Grohl';
 
-	this.helloMessage = 'Hello from AngularJS';
+	$scope.$watch('main.name', function(newValue, oldValue) {
 
+		console.log('newValue: ', newValue, ', oldValue: ', oldValue);
+
+		if (newValue == vm.specialName) {
+			vm.message = 'Hello! We\'ve been waiting for you';
+		} else {
+			vm.message = '';
+		}
+	});
 }]);
