@@ -12,14 +12,13 @@
 
 	<div ng-controller="MainController as main">
 
-		<p>Select the view:
-			<select ng-model="main.viewType">
-				<option value="partials/cars-short.html">Short</option>
-				<option value="partials/cars-long.html">Long</option>
-			</select>
-		</p>
+		<p><button ng-click="main.updateClickCount(5)">ng-click</button></p>
 
-		<div ng-include src="main.viewType"></div>
+		<p><button onclick="externalClick(this,5)">onClick</button></p>
+
+		<hr>
+
+		<p>Clicks: {{ main.clickCount }}</p>
 
 	</div>
 

@@ -1,22 +1,30 @@
-(function () {
-
 "use strict";
 
-  angular.module('myApp', []);
+angular.module('myApp', []);
 
-  angular.module('myApp').controller('MainController', [function() {
+//THIS IS BAD (1
+var mainCtrl = null;
 
-	  this.cars = [
-		  {make:'Mazda', model:'Miata', year: 2001},
-		  {make:'Toyota', model:'Prius', year: 2013},
-		  {make:'Tesla', model:'S', year: 2015},
-		  {make:'BMW', model:'325i', year: 2012},
-		  {make:'Lexus', model:'IS 250', year: 2009},
-		  {make:'Subaru', model:'Outback', year: 2014}
-	  ];
+angular.module('myApp').controller('MainController', [function() {
 
-	  this.viewType = 'partials/cars-short.html';
+	//THIS IS BAD (1)
+	mainCtrl = this;
 
-  }]);
+	var vm = this;
 
-}());
+	vm.clickCount = 0;
+
+	vm.updateClickCount = function (amount)  {
+		vm.clickCount += amount;
+	};
+
+}]);
+
+	//THIS IS ALSO BAD (2)
+function externalClick(elem, amount) {
+
+	var $scope = angular.element(elem).scope();
+	mainCtrl.clickCount += parseInt(amount);
+	$scope.$apply();
+
+}
