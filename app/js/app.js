@@ -2,16 +2,31 @@
 
 angular.module('myApp', []);
 
-angular.module('myApp').controller('MainController', [function() {
+angular.module('myApp').run(function($rootScope) {
 
-	var vm = this;
-
-	vm.showFirstItem = true;
-	vm.showSecondItem = false;
-	vm.hideThirdItem = true;
-
-	vm.isSecondItemShowing = function () {
-		return vm.showSecondItem;
+	$rootScope.userModel = {
+		name:'John Smith',
+		age: 33
 	};
+
+	$rootScope.sayHello = function () {
+		return 'Hello from AngularJS root scope.';
+	};
+
+});
+
+angular.module('myApp').controller('MainController', ['$scope', function($scope) {
+
+	//BE CAREFUL: You can override rootScope with scope (uncomment to check):
+	/*
+	$scope.userModel = {
+		name:'John Doe',
+		age: 22
+	};
+
+	$scope.sayHello = function () {
+		return 'Hello from AngularJS child scope.'
+	};
+	*/
 
 }]);
