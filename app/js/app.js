@@ -15,6 +15,8 @@
 		  {make:'Subaru', model:'Outback', year: 2014}
 	  ];
 
+	  this.viewType = 'partials/cars-short.html';
+
   }]);
 
 }());
