@@ -10,10 +10,19 @@
 
 <body>
 
-	<div ng-controller="MainController">
+	<div ng-controller="MainController as main">
 
-		<p>{{ userModel.name }}, age {{ userModel.age }}</p>
-		<p>{{ sayHello() }}</p>
+		<button ng-click="main.doClick()">Click</button>
+
+		<button ng-dblclick="main.doDoubleClick()">Double Click</button>
+
+		<button ng-click="main.doClick()" ng-dblclick="main.doDoubleClick()">Click or Double Click</button>
+
+		</hr>
+
+		<p># clicks: {{ main.clickCount }}</p>
+		<p># double-clicks: {{ main.doubleClickCount}}</p>
+
 	</div>
 
 </body>

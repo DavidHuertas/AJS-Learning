@@ -2,31 +2,17 @@
 
 angular.module('myApp', []);
 
-angular.module('myApp').run(function($rootScope) {
+angular.module('myApp').controller('MainController', [function() {
 
-	$rootScope.userModel = {
-		name:'John Smith',
-		age: 33
+	this.clickCount = 0;
+	this.doubleClickCount = 0;
+
+	this.doClick = function () {
+		this.clickCount = this.clickCount + 1;
 	};
 
-	$rootScope.sayHello = function () {
-		return 'Hello from AngularJS root scope.';
+	this.doDoubleClick = function () {
+		this.doubleClickCount = this.doubleClickCount + 1;
 	};
-
-});
-
-angular.module('myApp').controller('MainController', ['$scope', function($scope) {
-
-	//BE CAREFUL: You can override rootScope with scope (uncomment to check):
-	/*
-	$scope.userModel = {
-		name:'John Doe',
-		age: 22
-	};
-
-	$scope.sayHello = function () {
-		return 'Hello from AngularJS child scope.'
-	};
-	*/
 
 }]);
