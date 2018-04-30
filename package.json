@@ -1,19 +1,31 @@
 {
-  "name": "ajs-learning",
+  "name": "ajs-template",
   "version": "0.0.1",
-  "description": "Angular JS, Learning with Gfi Skillsoft Courses and more",
+  "description": "Angular JS Template, by David Huertas",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@bitbucket.org/dorchsoftteam/ajs-learning.git"
-  },
   "author": "dhuertas",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/dorchsoftteam/ajs-learning#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/dorchsoftteam/ajs-template.git"
+  },
+  "homepage": "https://bitbucket.org/dorchsoftteam/ajs-template#readme",
   "dependencies": {
-    "angular": "^1.4.4"
+    "bower": "^1.8.2",
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.4.0",
+    "gulp-connect": "^5.5.0",
+    "gulp-jade": "^1.1.0",
+    "gulp-jshint": "^2.1.0",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-uglify": "^3.0.0",
+    "jade": "^1.11.0"
+  },
+  "devDependencies": {
+    "jshint": "^2.9.5",
+    "run-sequence": "^2.2.1"
   }
 }

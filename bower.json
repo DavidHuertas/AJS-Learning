@@ -1,0 +1,27 @@
+{
+  "name": "ajs-template",
+  "description": "Angular JS Template, by David Huertas",
+  "main": "gulpfile.js",
+  "authors": [
+    "dhuertas"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "./app/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.9",
+    "angular-animate": "^1.6.9",
+    "angular-route": "^1.6.9",
+    "jquery": "^3.3.1",
+    "animate.css": "^3.5.2",
+    "bootstrap": "^4.0.0",
+    "fontawesome": "^5.0.8"
+  }
+}
