@@ -10,15 +10,12 @@
 <body>
 
 	<div ng-controller="MainController as main">
+		<ul ng-repeat="car in main.cars">
+			<li>{{ car.year }}</li>
+			<li>{{ car.make }}</li>
+			<li>{{ car.model }}</li>
+		</ul>
 
-		<p>Name: {{ main.user.name | capitalize }}</p>
-		<p>Account Type: {{ main.user.accountType | capitalize}}</p>
-		<p>Balance: {{ main.user.balance | number:2 }}</p>
-		<p>Last login: {{ main.user.lastLogin | date:'MM/dd/yyyy \'at\' hh:mma' }}</p>
-
-		</hr>
-
-		{{ main.user | json }}
 	</div>
 
 </body>
