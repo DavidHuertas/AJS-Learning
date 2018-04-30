@@ -12,14 +12,26 @@
 
 	<div ng-controller="MainController as main">
 
-		<p><button ng-click="main.updateClickCount(5)">ng-click</button></p>
+		<p>Show first item?
+			<input type="radio" name="first" ng-model="main.showFirstItem" ng-value="true">Yes
+			<input type="radio" name="first" ng-model="main.showFirstItem" ng-value="false">No
+		</p>
 
-		<p><button onclick="externalClick(this,5)">onClick</button></p>
+		<p>Show second item?
+			<input type="radio" name="second" ng-model="main.showSecondItem" ng-value="true">Yes
+			<input type="radio" name="second" ng-model="main.showSecondItem" ng-value="false">No
+		</p>
 
-		<hr>
+		<p>Hide third item?
+			<input type="radio" name="third" ng-model="main.hideThirdItem" ng-value="true">Yes
+			<input type="radio" name="third" ng-model="main.hideThirdItem" ng-value="false">No
+		</p>
 
-		<p>Clicks: {{ main.clickCount }}</p>
+		<div ng-show="main.showFirstItem">This is the first item.</div>
 
+		<div ng-show="main.isSecondItemShowing()">This is the second item.</div>
+
+		<div ng-hide="main.hideThirdItem">This is the third item.</div>
 	</div>
 
 </body>
