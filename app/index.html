@@ -12,16 +12,21 @@
 
 	<div ng-controller="MainController as main">
 
-		<img src="img/gibson_sg.jpg" 
-			ng-mouseover="main.doMouseOver($event)"
-			ng-mousemove="main.doMouseMove($event)"
-			width="784" height="288">
+		<div class="test-div"
+			ng-mouseenter="main.doMouseEnter($event)"
+			ng-mouseleave="main.doMouseLeave($event)"
+			ng-mouseover="main.doMouseOver($event)">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
 
 		</hr>
 
+		<p>Mouse enter count: {{ main.mouseEnterCount }}</p>
+		<p>Mouse leave count: {{ main.mouseLeaveCount }}</p>
 		<p>Mouse over count: {{ main.mouseOverCount }}</p>
-		<p>Mouse move count: {{ main.mouseMoveCount }}</p>
-		<p>Mouse X / Y: {{ main.mouseX }} / {{ main.mouseY }}</p>
 
 	</div>
 
