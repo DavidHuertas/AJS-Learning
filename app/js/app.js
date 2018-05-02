@@ -4,17 +4,21 @@ angular.module('myApp', []);
 
 angular.module('myApp').controller('MainController', [function() {
 
-	this.mouseDownCount = 0;
-	this.mouseUpCount = 0;
+	this.mouseOverCount = 0;
+	this.mouseMoveCount = 0;
+	this.mouseX = 0;
+	this.mouseY = 0;
 
-	this.doMouseDown = function (event) {
+	this.doMouseOver = function (event) {
 		console.log(event);
-		this.mouseDownCount++;
+		this.mouseOverCount++;
 	};
 
-	this.doMouseUp = function (event) {
+	this.doMouseMove = function (event) {
 		console.log(event);
-		this.mouseUpCount++;
+		this.mouseMoveCount++;
+		this.mouseX = event.offsetX;
+		this.mouseY = event.offsetY;
 	};
 
 }]);

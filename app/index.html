@@ -13,14 +13,15 @@
 	<div ng-controller="MainController as main">
 
 		<img src="img/gibson_sg.jpg" 
-			ng-mousedown="main.doMouseDown($event)"
-			ng-mouseup="main.doMouseUp($event)"
+			ng-mouseover="main.doMouseOver($event)"
+			ng-mousemove="main.doMouseMove($event)"
 			width="784" height="288">
 
 		</hr>
 
-		<p>{{ 'Mouse down count: ' + main.mouseDownCount }}</p>
-		<p>{{ 'Mouse up count: ' + main.mouseUpCount }}</p>
+		<p>Mouse over count: {{ main.mouseOverCount }}</p>
+		<p>Mouse move count: {{ main.mouseMoveCount }}</p>
+		<p>Mouse X / Y: {{ main.mouseX }} / {{ main.mouseY }}</p>
 
 	</div>
 
