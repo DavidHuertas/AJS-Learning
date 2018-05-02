@@ -12,15 +12,17 @@
 
 	<div ng-controller="MainController as main">
 
-		<p>We have your full name as '{{ main.fullName }}'</p>
+		<p>{{ main.standardBind }}</p>
+		<p ng-bind="main.standardBind"></p>
+
 		<p>&nbsp;</p>
 
-		<p>For confirmation please re-enter your full name:</p>
-		<p><input type="text" ng-change="main.doChange()" ng-model="main.fullNameConfirm"></p>
+		<p>{{ main.firstTemplateBinding }} and {{ main.secondTemplateBinding }}</p>
+		<p ng-bind-template="{{ main.firstTemplateBinding }} and {{ main.secondTemplateBinding }}"></p>
 
-		</hr>
+		<p>&nbsp;</p>
 
-		<p>{{ main.message }}</p>
+		<p ng-non-bindable>{{ main.nonBindable }}</p>
 
 	</div>
 
