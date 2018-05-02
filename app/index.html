@@ -3,6 +3,7 @@
 <head>
 	<title>Scope Functions</title>
 	<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+	<script type="text/javascript" src="bower_components/angular-sanitize/angular-sanitize.js"></script>
 	<script type="text/javascript" src="js/app.js"></script>
 	<link rel="stylesheet" href="css/main.css"></style>
 	<!--<link rel="stylesheet" href="./css/bootstrap.css"></style>-->
@@ -12,17 +13,21 @@
 
 	<div ng-controller="MainController as main">
 
-		<p>{{ main.standardBind }}</p>
-		<p ng-bind="main.standardBind"></p>
+		<p>{{ main.htmlData }}</p>
 
-		<p>&nbsp;</p>
+		<p>{{ main.dangerousScript }}</p>
 
-		<p>{{ main.firstTemplateBinding }} and {{ main.secondTemplateBinding }}</p>
-		<p ng-bind-template="{{ main.firstTemplateBinding }} and {{ main.secondTemplateBinding }}"></p>
+		<p>{{ main.dangerousCSS }}</p>
 
-		<p>&nbsp;</p>
+		<hr>
+		
+		<p ng-bind-html="main.htmlData"></p>
 
-		<p ng-non-bindable>{{ main.nonBindable }}</p>
+		<p ng-bind-html="main.dangerousScript"></p>
+
+		<p ng-bind-html="main.dangerousCSS"></p>
+
+		<p ng-bind-html="main.trustedCSS"></p>
 
 	</div>
 
