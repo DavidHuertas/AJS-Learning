@@ -4,15 +4,17 @@ angular.module('myApp', []);
 
 angular.module('myApp').controller('MainController', [function() {
 
-	this.clickCount = 0;
-	this.doubleClickCount = 0;
+	this.mouseDownCount = 0;
+	this.mouseUpCount = 0;
 
-	this.doClick = function () {
-		this.clickCount = this.clickCount + 1;
+	this.doMouseDown = function (event) {
+		console.log(event);
+		this.mouseDownCount++;
 	};
 
-	this.doDoubleClick = function () {
-		this.doubleClickCount = this.doubleClickCount + 1;
+	this.doMouseUp = function (event) {
+		console.log(event);
+		this.mouseUpCount++;
 	};
 
 }]);

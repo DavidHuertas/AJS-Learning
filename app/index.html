@@ -12,16 +12,15 @@
 
 	<div ng-controller="MainController as main">
 
-		<button ng-click="main.doClick()">Click</button>
-
-		<button ng-dblclick="main.doDoubleClick()">Double Click</button>
-
-		<button ng-click="main.doClick()" ng-dblclick="main.doDoubleClick()">Click or Double Click</button>
+		<img src="img/gibson_sg.jpg" 
+			ng-mousedown="main.doMouseDown($event)"
+			ng-mouseup="main.doMouseUp($event)"
+			width="784" height="288">
 
 		</hr>
 
-		<p># clicks: {{ main.clickCount }}</p>
-		<p># double-clicks: {{ main.doubleClickCount}}</p>
+		<p>{{ 'Mouse down count: ' + main.mouseDownCount }}</p>
+		<p>{{ 'Mouse up count: ' + main.mouseUpCount }}</p>
 
 	</div>
 
