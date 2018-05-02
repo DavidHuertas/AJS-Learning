@@ -4,25 +4,16 @@ angular.module('myApp', []);
 
 angular.module('myApp').controller('MainController', [function() {
 
-	this.mouseOverCount = 0;
-	this.mouseEnterCount = 0;
-	this.mouseLeaveCount = 0;
-	this.mouseX = 0;
-	this.mouseY = 0;
+	this.fullName = 'John Smith';
+	this.fullNameConfirm = '';
+	this.message = '';
 
-	this.doMouseEnter = function (event) {
-		console.log(event);
-		this.mouseEnterCount++;
-	};
-
-	this.doMouseLeave = function (event) {
-		console.log(event);
-		this.mouseLeaveCount++;
-	};
-
-	this.doMouseOver = function (event) {
-		console.log(event);
-		this.mouseOverCount++;
+	this.doChange = function () {
+		if (this.fullName === this.fullNameConfirm) {
+			this.message = 'Thank you for confirming your name.';
+		} else {
+			this.message = '';
+		};
 	};
 
 }]);

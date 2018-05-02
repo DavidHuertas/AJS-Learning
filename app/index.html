@@ -12,21 +12,15 @@
 
 	<div ng-controller="MainController as main">
 
-		<div class="test-div"
-			ng-mouseenter="main.doMouseEnter($event)"
-			ng-mouseleave="main.doMouseLeave($event)"
-			ng-mouseover="main.doMouseOver($event)">
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-		</div>
+		<p>We have your full name as '{{ main.fullName }}'</p>
+		<p>&nbsp;</p>
+
+		<p>For confirmation please re-enter your full name:</p>
+		<p><input type="text" ng-change="main.doChange()" ng-model="main.fullNameConfirm"></p>
 
 		</hr>
 
-		<p>Mouse enter count: {{ main.mouseEnterCount }}</p>
-		<p>Mouse leave count: {{ main.mouseLeaveCount }}</p>
-		<p>Mouse over count: {{ main.mouseOverCount }}</p>
+		<p>{{ main.message }}</p>
 
 	</div>
 
