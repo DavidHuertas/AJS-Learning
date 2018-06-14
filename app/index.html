@@ -7,21 +7,30 @@
 	<script type="text/javascript" src="js/app.js"></script>
 	<link rel="stylesheet" href="css/main.css"></style>
 	<!--<link rel="stylesheet" href="./css/bootstrap.css"></style>-->
+
+	<style>
+		.redClass {
+			color:red;
+		}
+		.greenClass {
+			color:green;
+		}
+	</style>
+
 </head>
 
 <body>
 
 	<div ng-controller="MainController as main">
 
-		<p ng-style="main.style1">This is the first line.</p>
-		<p ng-style="main.style2">This is the second line.</p>
+		<p ng-class="main.class1">This is the first line.</p>
+		<p class="ng-class:main.class2">This is the second line.</p>
 
 		<hr>
 
-		<p>
-			<button ng-click="main.enableStyles()">Enable Styles</button>
-			<button ng-click="main.disableStyles()">Disable Styles</button>
-		</p>
+		<p ng-class="{'redClass':main.isSelected, 'greenClass':!main.isSelected}">Changes based on selection.</p>
+
+		<p>Is Selected? <input type="checkbox" ng-model="main.isSelected"></p>
 
 	</div>
 
