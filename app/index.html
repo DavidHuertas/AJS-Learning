@@ -8,27 +8,15 @@
 	<link rel="stylesheet" href="css/main.css"></style>
 	<!--<link rel="stylesheet" href="./css/bootstrap.css"></style>-->
 
-	<style>
-		.even {
-			background-color:#aaeeee;
-		}
-		.odd {
-			background-color:#cccccc;
-		}
-	</style>
-
 </head>
 
 <body>
 
 	<div ng-controller="MainController as main">
 
-		<table>
-			<tr ng-repeat="item in main.foodList" ng-class-even="'even'" ng-class-odd="'odd'">
-				<td>{{ item.name }}</td>
-				<td>{{ item.price | currency }}</td>
-			</tr>
-		</table>
+		<p><img ng-src="{{main.imageUrl}}" width="684" height="288"></p>
+
+		<p><a ng-href="{{main.linkUrl}}" target="_blank">Go to David Orchards</a></p>
 
 	</div>
 
