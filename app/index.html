@@ -13,21 +13,15 @@
 
 	<div ng-controller="MainController as main">
 
-		<p>{{ main.htmlData }}</p>
-
-		<p>{{ main.dangerousScript }}</p>
-
-		<p>{{ main.dangerousCSS }}</p>
+		<p ng-style="main.style1">This is the first line.</p>
+		<p ng-style="main.style2">This is the second line.</p>
 
 		<hr>
-		
-		<p ng-bind-html="main.htmlData"></p>
 
-		<p ng-bind-html="main.dangerousScript"></p>
-
-		<p ng-bind-html="main.dangerousCSS"></p>
-
-		<p ng-bind-html="main.trustedCSS"></p>
+		<p>
+			<button ng-click="main.enableStyles()">Enable Styles</button>
+			<button ng-click="main.disableStyles()">Disable Styles</button>
+		</p>
 
 	</div>
 
